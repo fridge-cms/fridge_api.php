@@ -2,8 +2,9 @@
 
 ## Install
 
+Composer.json
+
 ```json
-# composer.json
 {
     "require": {
       "fridge/api": "@stable"
