@@ -68,7 +68,7 @@ class Client
     {
         $req = $this->agent->createRequest($method, $this->base."/".$path);
         if ($method == "POST" || $method == "PUT") {
-            $req = $this->client->createRequest($method, $this->base."/".$path, array(
+            $req = $this->agent->createRequest($method, $this->base."/".$path, array(
                 'body' => $data
             ));
         }

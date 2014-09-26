@@ -107,8 +107,8 @@ class Model
                     $hash[$key] = array_map(function($v) {
                         return isset($v['id'])? new Model($v) : $v;
                     }, $value);
+                    continue;
                 }
-                continue;
             }
 
             $hash[$key] = $value;
