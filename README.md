@@ -1,4 +1,17 @@
-Fridge API
+# Fridge API
+
+## Install
+
+```json
+# composer.json
+{
+    "require": {
+      "fridge/api": "@stable"
+    }
+}
+```
+
+## Usage
 
 ```php
 $client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxxx");
