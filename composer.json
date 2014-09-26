@@ -1,5 +1,23 @@
 {
+    "name": "fridge/api",
+    "type": "library",
+    "description": "Simple PHP wrapper for the Fridge API",
+    "keywords": ["api", "client", "fridge"],
+    "homepage": "http://github.com/fridge-cms/fridge_api.php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Kruk",
+            "email": "mike@ripeworks.com",
+            "homepage": "http://ripeworks.com"
+        }
+    ],
     "require": {
         "guzzlehttp/guzzle": "~4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "FridgeApi": "lib"
+        }
     }
 }
