@@ -67,6 +67,22 @@ class Model
         return print_r($this->attrs(), true);
     }
 
+    public static function new_from_type($type)
+    {
+        if (is_string($type)) $type = $this->get("types/{$type}");
+
+        return new Model(array(
+            'site_id' => $type->site_id,
+            'document_definition_id' => $type->uuid,
+            'content' => array_map(function ($part) {
+                return array(
+                    'part_definition_id' => $part->id,
+                    'name' => $part->name
+                );
+            }, $type->parts)
+        ));
+    }
+
 // private
     protected function is_part($val)
     {
