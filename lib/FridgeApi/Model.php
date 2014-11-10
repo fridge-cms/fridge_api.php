@@ -49,7 +49,7 @@ class Model
                     foreach ($value as $i => $part) {
                         $part_name = $this->part_name($part);
                         if ($this->part_value($part) != $this->attrs[$part_name]) {
-                            $this->raw[$i]['value'] = $this->attrs[$part_name];
+                            $this->raw[$key][$i]['value'] = $this->attrs[$part_name];
                         }
                     }
                     continue;
