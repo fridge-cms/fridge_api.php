@@ -98,14 +98,6 @@ class Model
     {
         $value = isset($part['value'])? $part['value'] : null;
 
-        if (!$value) return $value;
-
-        if (isset($part['part'])) {
-            if ($part['part']['type'] == "file" || $part['part']['type'] == "image") {
-                $value = json_decode($value);
-            }
-        }
-
         return $value;
     }
 
