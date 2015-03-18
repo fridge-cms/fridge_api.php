@@ -88,6 +88,12 @@ class Model
     {
         return isset($val[0]) && isset($val[0]['part_definition_id']);
     }
+    
+    protected function is_part_definition($val)
+    {
+        if (!isset($val[0])) return false;
+        return isset($val[0]['definition_id']) && isset($val[0]['definition_type']);
+    }
 
     protected function part_name($part)
     {
@@ -110,6 +116,10 @@ class Model
                 if ($this->is_part($value)) {
                     foreach ($value as $part) {
                         $hash[$this->part_name($part)] = $this->part_value($part);
+                    }
+                } elseif ($this->is_part_definition($value)) {
+                    foreach ($value as $part) {
+                        $hash[$this->part_name($part)] = $part;
                     }
                 } else {
                     $hash[$key] = array_map(function($v) {
