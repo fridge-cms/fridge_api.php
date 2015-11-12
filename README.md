@@ -16,13 +16,15 @@ Composer.json
 
 ```php
 $client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxxx");
-$pages = $api->get('content', array(
+$pages = $client->get('content', array(
   'type' => 'pages'
 ));
 
 foreach ($pages as $page) {
   $page->title = "New Page Title";
   // Save new title
-  $api->put("content/{$page->id}", $page->commit());
+  $client->put("content/{$page->id}", $page->commit());
 }
 ```
+
+See the [Fridge Documentation](https://docs.fridgecms.com) for more examples.
