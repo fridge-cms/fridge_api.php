@@ -48,6 +48,19 @@ class Client
         return $this->response_to_model($this->request("DELETE", $path, null, $options));
     }
 
+    public function file($filename, $options = array())
+    {
+        return $this->request("GET", "content/upload/{$filename}", null, $options)->getBody();
+    }
+
+    public function upload($file, $options = array())
+    {
+        if (!is_resource($file)) {
+            throw new \Exception('FridgeApi::upload. File must be a stream.');
+        }
+        return $this->request("POST", "content/upload", array('file' => $file), $options)->json();
+    }
+
     public function response_to_model($res)
     {
         try {
