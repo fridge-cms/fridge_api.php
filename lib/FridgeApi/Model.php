@@ -88,11 +88,11 @@ class Model
     {
         return isset($val[0]) && isset($val[0]['part_definition_id']);
     }
-    
+
     protected function is_part_definition($val)
     {
         if (!isset($val[0])) return false;
-        return isset($val[0]['definition_id']) && isset($val[0]['definition_type']);
+        return isset($val[0]['definition_id']);
     }
 
     protected function part_name($part)
