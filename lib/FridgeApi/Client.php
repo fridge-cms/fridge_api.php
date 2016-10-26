@@ -3,7 +3,7 @@ namespace FridgeApi;
 
 class Client
 {
-    public $base = "http://api.fridgecms.com/v1";
+    public $base = "https://api.fridgecms.com/v1";
     public $debug = false;
     protected $agent, $access_token, $refresh_token, $api_key, $api_secret;
 
