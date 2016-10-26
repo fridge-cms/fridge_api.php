@@ -27,4 +27,4 @@ foreach ($pages as $page) {
 }
 ```
 
-See the [Fridge Documentation](https://docs.fridgecms.com) for more examples.
+See the [Fridge Documentation](https://fridgecms.com/docs/) for more examples.
